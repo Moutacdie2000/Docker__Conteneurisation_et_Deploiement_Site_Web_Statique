@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site statique de démonstration empaqueté dans un conteneur Docker pour la portabilité et le déploiement."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>Docker Static Site — Démo de portabilité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="brand" href="#accueil">
+          <span class="brand__mark" aria-hidden="true">📦</span>
+          <span class="brand__text">Docker Static Site</span>
+        </a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Ouvrir le menu de navigation"
+        >
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="#stack">Stack technique</a></li>
+          <li><a href="#demarrage">Démarrage</a></li>
+          <li>
+            <a
+              class="nav__cta"
+              href="https://github.com"
+              rel="noopener noreferrer"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <section class="hero" id="accueil">
+        <div class="container hero__inner">
+          <p class="hero__eyebrow">Portabilité · Conteneurisation · Déploiement</p>
+          <h1 class="hero__title">
+            Un site statique, empaqueté une fois,
+            <span class="hero__title-accent">déployable partout.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Cette landing page HTML / CSS / JavaScript, sans aucun framework, est
+            servie par Nginx à l'intérieur d'une image Docker légère. Le même
+            artefact tourne à l'identique sur votre poste, en CI et en production.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#demarrage">Démarrer en 30 secondes</a>
+            <a class="btn btn--ghost" href="#stack">Voir la stack</a>
+          </div>
+          <dl class="hero__stats">
+            <div class="hero__stat">
+              <dt>Image de base</dt>
+              <dd>nginx:alpine</dd>
+            </div>
+            <div class="hero__stat">
+              <dt>Port local</dt>
+              <dd>8088</dd>
+            </div>
+            <div class="hero__stat">
+              <dt>Dépendances JS</dt>
+              <dd>0</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section" id="fonctionnalites" aria-labelledby="features-title">
+        <div class="container">
+          <h2 class="section__title" id="features-title">Ce que démontre ce projet</h2>
+          <p class="section__lead">
+            Un exemple concret et minimal des bonnes pratiques de
+            conteneurisation d'un site statique, prêt pour la production.
+          </p>
+          <ul class="features">
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🚀</span>
+              <h3 class="feature__title">Portabilité totale</h3>
+              <p class="feature__text">
+                Une seule image embarque le serveur et les fichiers. Aucun
+                « ça marche sur ma machine » : l'artefact est identique partout.
+              </p>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🛡️</span>
+              <h3 class="feature__title">En-têtes de sécurité</h3>
+              <p class="feature__text">
+                CSP, X-Content-Type-Options, Referrer-Policy et compagnie sont
+                appliqués directement par Nginx pour durcir la diffusion.
+              </p>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">⚡</span>
+              <h3 class="feature__title">Performances</h3>
+              <p class="feature__text">
+                Compression gzip et stratégie de cache HTTP réglées pour servir
+                les ressources statiques rapidement et efficacement.
+              </p>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🔒</span>
+              <h3 class="feature__title">Moindre privilège</h3>
+              <p class="feature__text">
+                Le conteneur s'exécute sous un utilisateur non-root, avec un
+                HEALTHCHECK intégré pour la supervision de l'état du service.
+              </p>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🔁</span>
+              <h3 class="feature__title">CI/CD automatisée</h3>
+              <p class="feature__text">
+                Un workflow GitHub Actions construit l'image et la publie sur le
+                GitHub Container Registry (GHCR) à chaque push sur main.
+              </p>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">📱</span>
+              <h3 class="feature__title">Responsive & sobre</h3>
+              <p class="feature__text">
+                Une interface épurée, accessible et adaptée à tous les écrans,
+                écrite en HTML/CSS/JS pur, sans dépendance externe.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="stack" aria-labelledby="stack-title">
+        <div class="container">
+          <h2 class="section__title" id="stack-title">Stack technique</h2>
+          <p class="section__lead">
+            Des briques standard, éprouvées et volontairement minimalistes.
+          </p>
+          <div class="stack">
+            <div class="stack__item">
+              <h3 class="stack__name">Nginx (Alpine)</h3>
+              <p class="stack__desc">
+                Serveur web ultra-léger qui diffuse les fichiers statiques et
+                applique compression, cache et en-têtes de sécurité.
+              </p>
+            </div>
+            <div class="stack__item">
+              <h3 class="stack__name">Docker</h3>
+              <p class="stack__desc">
+                Empaquetage de l'application et de son serveur dans une image
+                immuable et reproductible.
+              </p>
+            </div>
+            <div class="stack__item">
+              <h3 class="stack__name">Docker Compose</h3>
+              <p class="stack__desc">
+                Orchestration locale du service web avec la projection de port
+                <code>8088:80</code> pour un démarrage en une commande.
+              </p>
+            </div>
+            <div class="stack__item">
+              <h3 class="stack__name">GitHub Actions + GHCR</h3>
+              <p class="stack__desc">
+                Construction et publication continues de l'image sur le registre
+                de conteneurs de GitHub.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="demarrage" aria-labelledby="start-title">
+        <div class="container">
+          <h2 class="section__title" id="start-title">Démarrage rapide</h2>
+          <p class="section__lead">
+            Construisez l'image et lancez le conteneur, puis ouvrez le site en
+            local.
+          </p>
+          <div class="code-card">
+            <div class="code-card__head">
+              <span class="code-card__dot" aria-hidden="true"></span>
+              <span class="code-card__dot" aria-hidden="true"></span>
+              <span class="code-card__dot" aria-hidden="true"></span>
+              <span class="code-card__file">terminal</span>
+              <button class="code-card__copy" type="button" data-copy-target="snippet">
+                Copier
+              </button>
+            </div>
+            <pre class="code-card__body"><code id="snippet"># Construire l'image
+docker build -t docker-static-site .
+
+# Lancer le conteneur
+docker run --rm -p 8088:80 docker-static-site
+
+# Ou tout en un avec Docker Compose
+docker compose up --build</code></pre>
+          </div>
+          <p class="section__note">
+            Une fois le conteneur démarré, ouvrez
+            <a href="http://localhost:8088" rel="noopener">http://localhost:8088</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__brand">
+          <span aria-hidden="true">📦</span> Docker Static Site
+        </p>
+        <p class="site-footer__meta">
+          Démo de portabilité conteneurisée ·
+          <span id="year">2026</span> · Licence MIT
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
