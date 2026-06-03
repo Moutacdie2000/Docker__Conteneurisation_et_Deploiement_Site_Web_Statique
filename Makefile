@@ -1,5 +1,5 @@
 # =============================================================================
-# Makefile — Cycle de vie du site statique conteneurisé.
+# Makefile, Cycle de vie du site statique conteneurisé.
 #
 # Cibles principales :
 #   make build         Construit l'image Docker locale

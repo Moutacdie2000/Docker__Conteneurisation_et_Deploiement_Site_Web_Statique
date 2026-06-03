@@ -1,5 +1,5 @@
 # =============================================================================
-# Dockerfile — Site statique servi par Nginx (Alpine).
+# Dockerfile, Site statique servi par Nginx (Alpine).
 #
 # Principes appliqués :
 #   - image de base minimale et figée (nginx:alpine) ;

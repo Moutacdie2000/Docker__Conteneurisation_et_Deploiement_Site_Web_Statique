@@ -1,5 +1,5 @@
 # =============================================================================
-# Workflow CI/CD — Construction et publication de l'image Docker sur GHCR.
+# Workflow CI/CD, Construction et publication de l'image Docker sur GHCR.
 #
 # Déclencheurs :
 #   - push sur la branche main  -> construction + publication sur GHCR ;

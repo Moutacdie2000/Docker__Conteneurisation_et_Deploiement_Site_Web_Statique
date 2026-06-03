@@ -5,7 +5,7 @@
 
 Cette démo sert une petite landing page **sobre, responsive et sans framework**
 à l'aide de **Nginx** dans une image **Docker** légère. Le même artefact tourne
-à l'identique sur votre poste, en intégration continue et en production —
+à l'identique sur votre poste, en intégration continue et en production, 
 fini le « ça marche sur ma machine ».
 
 ---
@@ -32,7 +32,7 @@ L'idée est volontairement simple, mais le packaging est de qualité production 
 | Docker Engine   | 24+                | Inclut `docker build` et `docker run`.        |
 | Docker Compose  | v2 (`docker compose`) | Intégré aux versions récentes de Docker.   |
 | GNU Make        | 3.81+              | Optionnel, pour les raccourcis du `Makefile`. |
-| Un navigateur   | —                  | Pour ouvrir <http://localhost:8088>.          |
+| Un navigateur   |, | Pour ouvrir <http://localhost:8088>.          |
 
 Aucun environnement Node.js n'est requis : le site ne dépend d'**aucun**
 paquet npm.
@@ -54,7 +54,7 @@ docker-static-site/
 ├── Makefile                   # build / run / stop / logs / publish-ghcr
 ├── .github/workflows/docker.yml  # CI : build + publication GHCR
 ├── .gitignore
-├── LICENSE                    # MIT — Noumabeu Moutacdie Jordan, 2026
+├── LICENSE                    # MIT, Noumabeu Moutacdie Jordan, 2026
 └── README.md
 ```
 
@@ -67,7 +67,7 @@ docker-static-site/
 
 ## Démarrage rapide
 
-### Option A — Docker (build & run)
+### Option A, Docker (build & run)
 
 ```bash
 # 1. Construire l'image
@@ -79,7 +79,7 @@ docker run --rm -p 8088:8080 docker-static-site
 
 Ouvrez ensuite **<http://localhost:8088>**.
 
-### Option B — Docker Compose
+### Option B, Docker Compose
 
 ```bash
 # Construit l'image si besoin puis démarre le service
@@ -94,7 +94,7 @@ docker compose down
 
 Le service est exposé sur **<http://localhost:8088>**.
 
-### Option C — Makefile
+### Option C, Makefile
 
 ```bash
 make build     # Construit l'image locale

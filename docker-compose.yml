@@ -1,5 +1,5 @@
 # =============================================================================
-# Docker Compose — Orchestration locale du site statique.
+# Docker Compose, Orchestration locale du site statique.
 #
 # Usage :
 #   docker compose up --build      # construit l'image et démarre le service

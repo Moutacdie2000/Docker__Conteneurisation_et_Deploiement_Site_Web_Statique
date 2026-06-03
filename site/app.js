@@ -1,5 +1,5 @@
 /* =========================================================================
- * Docker Static Site — Script de la landing page
+ * Docker Static Site, Script de la landing page
  * JavaScript natif (sans framework). Trois petites améliorations
  * progressives : menu mobile accessible, bouton « copier » du snippet
  * et mise à jour de l'année dans le pied de page.
