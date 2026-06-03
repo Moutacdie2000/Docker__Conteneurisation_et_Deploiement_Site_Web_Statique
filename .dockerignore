@@ -1,0 +1,39 @@
+# =============================================================================
+# Fichiers exclus du contexte de construction Docker.
+# Objectif : garder le contexte minimal, rapide et sans secrets.
+# =============================================================================
+
+# Métadonnées de versionnage
+.git
+.gitignore
+.gitattributes
+
+# Documentation et fichiers de projet inutiles à l'image
+README.md
+LICENSE
+Makefile
+
+# Intégration continue
+.github
+
+# Caches et artefacts d'outillage
+**/.DS_Store
+**/Thumbs.db
+*.log
+node_modules
+dist
+build
+coverage
+.cache
+.tmp
+
+# Configuration d'éditeurs / IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Fichiers d'environnement (ne jamais embarquer de secrets)
+.env
+.env.*
+*.local

@@ -1,0 +1,47 @@
+# =============================================================================
+# .gitignore — Site statique conteneurisé
+# =============================================================================
+
+# Systèmes d'exploitation
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Logs et fichiers temporaires
+*.log
+logs/
+*.tmp
+.cache/
+.tmp/
+
+# Variables d'environnement et secrets (ne jamais committer)
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# Artefacts de build éventuels
+dist/
+build/
+node_modules/
+coverage/
+
+# Artefacts Docker locaux
+*.tar
+docker-compose.override.yml
